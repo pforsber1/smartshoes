@@ -4,6 +4,7 @@ import multiprocessing
 import RPi.GPIO as GPIO
 import time
 import random
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(19,GPIO.OUT)
@@ -12,6 +13,7 @@ GPIO.setup(16,GPIO.OUT)
 GPIO.setup(20,GPIO.OUT)
 GPIO.setup(21,GPIO.OUT)
 GPIO.setup(23,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
+
 motor1 = GPIO.PWM(19,1000)
 motor2 = GPIO.PWM(26,1000)
 motor3 = GPIO.PWM(16,1000)
@@ -22,7 +24,7 @@ motor2.start(0)
 motor3.start(0)
 motor4.start(0)
 motor5.start(0)
-count = -1
+
 gp1 = [motor1,motor2,motor3]
 gp2 = [motor1,motor2,motor4]
 gp3 = [motor1,motor2,motor5]
@@ -33,6 +35,8 @@ gp7 = [motor2,motor3,motor4]
 gp8 = [motor2,motor3,motor5]
 gp9 = [motor2,motor4,motor5]
 gp10 = [motor3,motor4,motor5]
+
+count = -1
 randnum = 0
 global data
 data = 0
